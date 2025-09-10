@@ -1,33 +1,49 @@
 {
   "title": "VibeVoice",
-  "description": "An example description",
+  "description": "Frontier open-source text-to-speech with expressive control, powered by microsoft/VibeVoice-1.5B. Supports English and Chinese with multi-speaker synthesis.",
   "type": "serverless",
   "category": "audio",
-  "iconUrl": "https://example.com/icon.png",
+  "iconUrl": "https://raw.githubusercontent.com/jords1755/VibeVoice/main/assets/icon.png",
   "config": {
     "runsOn": "GPU",
     "containerDiskInGb": 20,
     "presets": [
       {
-        "name": "Preset 1",
+        "name": "English Default",
         "defaults": {
-          "STATIC_1": "value_1",
-          "STRING_1": "default value 1"
+          "MODEL_NAME": "microsoft/VibeVoice-1.5B",
+          "LANGUAGE": "en"
+        }
+      },
+      {
+        "name": "Chinese Default",
+        "defaults": {
+          "MODEL_NAME": "microsoft/VibeVoice-1.5B",
+          "LANGUAGE": "zh"
         }
       }
     ],
     "env": [
       {
-        "key": "STATIC_VAR",
-        "value": "static_value"
+        "key": "MODEL_NAME",
+        "value": "microsoft/VibeVoice-1.5B"
       },
       {
-        "key": "STRING_VAR",
+        "key": "LANGUAGE",
         "input": {
-          "name": "String Input",
+          "name": "Language Code",
           "type": "string",
-          "description": "A string input test",
-          "default": "new default value"
+          "description": "Language for synthesis (en or zh)",
+          "default": "en"
+        }
+      },
+      {
+        "key": "HF_TOKEN",
+        "input": {
+          "name": "Hugging Face Token",
+          "type": "string",
+          "description": "Required if using gated model weights from Hugging Face",
+          "default": ""
         }
       }
     ]
