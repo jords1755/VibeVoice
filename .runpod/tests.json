@@ -1,0 +1,48 @@
+{
+  "tests": [
+    {
+      "name": "validation_text_input_en",
+      "input": {
+        "text": "Hello world, this is VibeVoice speaking.",
+        "language": "en"
+      },
+      "timeout": 15000
+    },
+    {
+      "name": "validation_text_input_zh",
+      "input": {
+        "text": "你好，世界，这是 VibeVoice。",
+        "language": "zh"
+      },
+      "timeout": 15000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA GeForce RTX 4090",
+    "gpuCount": 1,
+    "env": [
+      {
+        "key": "MODEL_NAME",
+        "value": "microsoft/VibeVoice-1.5B"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "en"
+      },
+      {
+        "key": "HF_TOKEN",
+        "value": "test_token"
+      }
+    ],
+    "allowedCudaVersions": [
+      "12.7",
+      "12.6",
+      "12.5",
+      "12.4",
+      "12.3",
+      "12.2",
+      "12.1",
+      "12.0"
+    ]
+  }
+}
