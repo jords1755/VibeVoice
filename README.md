@@ -1,3 +1,5 @@
+[![Runpod](https://api.runpod.io/badge/jords1755/VibeVoice)](https://console.runpod.io/hub/jords1755/VibeVoice)
+
 <div align="center">
 
 ## 🎙️ VibeVoice: A Frontier Long Conversational Text-to-Speech Model
